@@ -5,11 +5,13 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.WPF", "YouTubeViewers.WPF\YouTubeViewers.WPF.csproj", "{8D13A319-C974-4F35-A133-7CEECD20C92A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.EFLayer", "YouTubeViewers.EntityFramework\YouTubeViewers.EFLayer.csproj", "{A37E1DFD-2E35-4251-8783-CBDBD0A5FE2F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.Domain", "YouTubeViewers.Domain\YouTubeViewers.Domain.csproj", "{CCCA6CC2-CF9B-4C05-A86F-503F4CC77E56}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.MDBLayer", "YouTubeViewer.MDBLayer\YouTubeViewers.MDBLayer.csproj", "{D5429CBF-ACC6-4BD0-828F-27DD05567C85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.DataLayerProvider", "YoutubeDataLayerProvider\YouTubeViewers.DataLayerProvider.csproj", "{A085E3B6-3928-4112-87CC-45B18B73A5B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers.EFLayer", "YouTubeViewers.EFLayer\YouTubeViewers.EFLayer.csproj", "{540AFB5C-FAF8-4288-AEB3-317D122C386B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		{8D13A319-C974-4F35-A133-7CEECD20C92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D13A319-C974-4F35-A133-7CEECD20C92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D13A319-C974-4F35-A133-7CEECD20C92A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A37E1DFD-2E35-4251-8783-CBDBD0A5FE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A37E1DFD-2E35-4251-8783-CBDBD0A5FE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A37E1DFD-2E35-4251-8783-CBDBD0A5FE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A37E1DFD-2E35-4251-8783-CBDBD0A5FE2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCCA6CC2-CF9B-4C05-A86F-503F4CC77E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCCA6CC2-CF9B-4C05-A86F-503F4CC77E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCCA6CC2-CF9B-4C05-A86F-503F4CC77E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{D5429CBF-ACC6-4BD0-828F-27DD05567C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5429CBF-ACC6-4BD0-828F-27DD05567C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5429CBF-ACC6-4BD0-828F-27DD05567C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A085E3B6-3928-4112-87CC-45B18B73A5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A085E3B6-3928-4112-87CC-45B18B73A5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A085E3B6-3928-4112-87CC-45B18B73A5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A085E3B6-3928-4112-87CC-45B18B73A5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540AFB5C-FAF8-4288-AEB3-317D122C386B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540AFB5C-FAF8-4288-AEB3-317D122C386B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540AFB5C-FAF8-4288-AEB3-317D122C386B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540AFB5C-FAF8-4288-AEB3-317D122C386B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

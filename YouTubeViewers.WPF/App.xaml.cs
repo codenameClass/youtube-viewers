@@ -12,12 +12,11 @@ using YouTubeViewers.DataLayerProvider;
 using YouTubeViewers.WPF.Stores;
 using YouTubeViewers.WPF.ViewModels;
 using YouTubeViewers.WPF.HostBuilders;
-using Microsoft.EntityFrameworkCore;
 using YouTubeViewers.Domain.Interfaces;
-using AdresbeheerMDBlayer.Repositories;
-using YouTubeViewers.EFLayer;
 using System.Xml.Linq;
 using YouTubeViewers.Domain.Services;
+using YouTubeViewers.EFLayer.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace YouTubeViewers.WPF
 {

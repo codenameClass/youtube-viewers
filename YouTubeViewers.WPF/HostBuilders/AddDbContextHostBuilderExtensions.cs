@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YouTubeViewers.DataLayerProvider;
 using YouTubeViewers.EFLayer;
+using YouTubeViewers.EFLayer.Repositories;
 
 namespace YouTubeViewers.WPF.HostBuilders
 {

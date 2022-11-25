@@ -1,15 +1,15 @@
-﻿using AdresbeheerMDBlayer.Exceptions;
-using AdresbeheerMDBlayer.Model;
+﻿using YouTubeViewers.EFLayer.Exceptions;
+using YouTubeViewers.EFLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using YouTubeViewers.Domain.Models;
+using YouTubeViewers.Domain.Model;
 using YouTubeViewers.EFLayer;
 
-namespace AdresbeheerMDBlayer.Mappers
+namespace YouTubeViewers.EFLayer.Mappers
 {
     public interface MapYouTubeViewer
     {
@@ -30,8 +30,7 @@ namespace AdresbeheerMDBlayer.Mappers
 			try
 			{
 				return YouTubeViewer.CreateYouTubeViewerWithId(a.Id, a.Username, a.IsSubscribed, a.IsMember);
-
-            }
+			}
 			catch (Exception ex)
 			{
 				throw new MapException("MapYouTubeViewer - MapToDomain", ex);

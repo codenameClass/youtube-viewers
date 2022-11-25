@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdresbeheerMDBlayer.Model
+namespace YouTubeViewers.EFLayer.Model
 {
     public class YouTubeViewerEF
     {

@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\YouTubeViewer.MDBLayer\YouTubeViewers.MDBLayer.csproj" />
     <ProjectReference Include="..\YouTubeViewers.Domain\YouTubeViewers.Domain.csproj" />
-    <ProjectReference Include="..\YouTubeViewers.EntityFramework\YouTubeViewers.EFLayer.csproj" />
+    <ProjectReference Include="..\YouTubeViewers.EFLayer\YouTubeViewers.EFLayer.csproj" />
   </ItemGroup>
 
 </Project>

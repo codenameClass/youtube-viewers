@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouTubeViewers.EFLayer
+namespace YouTubeViewers.EFLayer.Repositories
 {
     public class YouTubeViewersDbContextEFFactory
     {

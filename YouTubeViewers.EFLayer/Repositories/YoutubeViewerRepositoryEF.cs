@@ -1,16 +1,15 @@
-﻿using AdresbeheerMDBlayer.Exceptions;
-using AdresbeheerMDBlayer.Mappers;
-using AdresbeheerMDBlayer.Model;
+﻿using YouTubeViewers.EFLayer.Exceptions;
+using YouTubeViewers.EFLayer.Mappers;
+using YouTubeViewers.EFLayer.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using YouTubeViewers.Domain.Interfaces;
-using YouTubeViewers.Domain.Models;
-using YouTubeViewers.EFLayer;
+using YouTubeViewers.Domain.Model;
 
-namespace AdresbeheerMDBlayer.Repositories
+namespace YouTubeViewers.EFLayer.Repositories
 {
     public class YoutubeViewerRepositoryEF : IYouTubeViewerRepository
     {

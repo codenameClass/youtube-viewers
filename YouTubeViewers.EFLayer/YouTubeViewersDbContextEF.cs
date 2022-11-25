@@ -1,4 +1,4 @@
-﻿using AdresbeheerMDBlayer.Model;
+﻿using YouTubeViewers.EFLayer.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouTubeViewers.EFLayer
+namespace YouTubeViewers.EFLayer.Repositories
 {
     public class YouTubeViewersDbContextEF : DbContext
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using YouTubeViewers.Domain.Interfaces;
-using YouTubeViewers.Domain.Models;
+using YouTubeViewers.Domain.Model;
 
 namespace YouTubeViewers.WPF.Stores
 {
