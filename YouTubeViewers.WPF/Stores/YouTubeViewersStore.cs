@@ -8,7 +8,7 @@ namespace YouTubeViewers.WPF.Stores
 {
     public class YouTubeViewersStore
     {
-        private readonly IYouTubeViewerRepository _YouTubeViewerRepository;
+        private readonly IYouTubeViewerService _youTubeViewerService;
         private readonly List<YouTubeViewer> _youTubeViewers;
         public IEnumerable<YouTubeViewer> YouTubeViewers => _youTubeViewers;
 
@@ -17,15 +17,15 @@ namespace YouTubeViewers.WPF.Stores
         public event Action<YouTubeViewer> YouTubeViewerUpdated;
         public event Action<Guid> YouTubeViewerDeleted;
 
-        public YouTubeViewersStore(IYouTubeViewerRepository IYoutubeViewerRepository)
+        public YouTubeViewersStore(IYouTubeViewerService youTubeViewerService)
         {
-            _YouTubeViewerRepository = IYoutubeViewerRepository;
+            _youTubeViewerService = youTubeViewerService;
             _youTubeViewers = new List<YouTubeViewer>();
         }
 
         public async Task Load()
         {
-            List<YouTubeViewer> youTubeViewers = await _YouTubeViewerRepository.Load();
+            List<YouTubeViewer> youTubeViewers = await _youTubeViewerService.GetAllYouTubeViewers();
 
             _youTubeViewers.Clear();
             _youTubeViewers.AddRange(youTubeViewers);
@@ -33,35 +33,34 @@ namespace YouTubeViewers.WPF.Stores
             YouTubeViewersLoaded?.Invoke();
         }
 
-        public async Task Add(YouTubeViewer youTubeViewer)
+        public async Task Add(Guid id, string username, bool isSubscribed, bool isMember)
         {
-            await _YouTubeViewerRepository.Add(youTubeViewer);
+            YouTubeViewer createdYouTubeViewer = await _youTubeViewerService.CreateYouTubeViewer(id, username, isSubscribed, isMember);
+            _youTubeViewers.Add(createdYouTubeViewer);
 
-            _youTubeViewers.Add(youTubeViewer);
-
-            YouTubeViewerAdded?.Invoke(youTubeViewer);
+            YouTubeViewerAdded?.Invoke(createdYouTubeViewer);
         }
 
-        public async Task Update(YouTubeViewer youTubeViewer)
+        public async Task Update(Guid id, string username, bool isSubscribed, bool isMember)
         {
-            await _YouTubeViewerRepository.Update(youTubeViewer);
-            int currentIndex = _youTubeViewers.FindIndex(y => y.Id == youTubeViewer.Id);
+            YouTubeViewer updatedyYouTubeViewer = await _youTubeViewerService.UpdateYouTubeViewer(id, username, isSubscribed, isMember);
+            int currentIndex = _youTubeViewers.FindIndex(y => y.Id == id);
 
             if(currentIndex != -1)
             {
-                _youTubeViewers[currentIndex] = youTubeViewer;
+                _youTubeViewers[currentIndex] = updatedyYouTubeViewer;
             }
             else
             {
-                _youTubeViewers.Add(youTubeViewer);
+                _youTubeViewers.Add(updatedyYouTubeViewer);
             }
 
-            YouTubeViewerUpdated?.Invoke(youTubeViewer);
+            YouTubeViewerUpdated?.Invoke(updatedyYouTubeViewer);
         }
 
         public async Task Delete(Guid id)
         {
-            await _YouTubeViewerRepository.Delete(id);
+            await _youTubeViewerService.DeleteYouTubeViewer(id);
             _youTubeViewers.RemoveAll(y => y.Id == id);
 
             YouTubeViewerDeleted?.Invoke(id);

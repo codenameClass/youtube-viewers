@@ -28,7 +28,7 @@ namespace YouTubeViewers.WPF.Commands
             {
                 await _youTubeViewersStore.Load();
             }
-            catch (Exception ex )
+            catch (Exception)
             {
                 _youTubeViewersViewModel.ErrorMessage = "Failed to load YouTube viewers. Please restart the application.";
             }

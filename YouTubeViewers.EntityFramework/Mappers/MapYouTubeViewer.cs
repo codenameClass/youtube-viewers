@@ -29,8 +29,9 @@ namespace AdresbeheerMDBlayer.Mappers
 		{
 			try
 			{
-				return new YouTubeViewer(a.Id, a.Username, a.IsSubscribed, a.IsMember);
-			}
+				return YouTubeViewer.CreateYouTubeViewerWithId(a.Id, a.Username, a.IsSubscribed, a.IsMember);
+
+            }
 			catch (Exception ex)
 			{
 				throw new MapException("MapYouTubeViewer - MapToDomain", ex);

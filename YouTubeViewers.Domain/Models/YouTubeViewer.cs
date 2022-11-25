@@ -17,12 +17,17 @@ namespace YouTubeViewers.Domain.Models
         public YouTubeViewer() { }
 
 
-        public YouTubeViewer(Guid id, string username, bool isSubscribed, bool isMember)
+        private YouTubeViewer(Guid id, string username, bool isSubscribed, bool isMember)
         {
             Id = id;
             Username = username;
             IsSubscribed = isSubscribed;
             IsMember = isMember;
+        }
+
+        public static YouTubeViewer CreateYouTubeViewerWithId(Guid id, string username, bool isSubscribed, bool isMember)
+        {
+            return new YouTubeViewer(id, username, isSubscribed, isMember);
         }
     }
 }

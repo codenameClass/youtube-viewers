@@ -29,15 +29,15 @@ namespace YouTubeViewers.WPF.Commands
             formViewModel.ErrorMessage = null;
             formViewModel.IsSubmitting = true;
 
-            YouTubeViewer youTubeViewer = new YouTubeViewer(
-                _editYouTubeViewerViewModel.YouTubeViewerId,
-                formViewModel.Username,
-                formViewModel.IsSubscribed,
-                formViewModel.IsMember);
-
             try
             {
-                await _youTubeViewersStore.Update(youTubeViewer);
+                await _youTubeViewersStore.Update
+                (
+                    _editYouTubeViewerViewModel.YouTubeViewerId,
+                    formViewModel.Username,
+                    formViewModel.IsSubscribed,
+                    formViewModel.IsMember
+                );
 
                 _modalNavigationStore.Close();
             }

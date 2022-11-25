@@ -17,6 +17,7 @@ using YouTubeViewers.Domain.Interfaces;
 using AdresbeheerMDBlayer.Repositories;
 using YouTubeViewers.EFLayer;
 using System.Xml.Linq;
+using YouTubeViewers.Domain.Services;
 
 namespace YouTubeViewers.WPF
 {
@@ -56,6 +57,7 @@ namespace YouTubeViewers.WPF
                     }
 
                     //Dependency injection
+                    services.AddSingleton<IYouTubeViewerService, YouTubeViewerService>();
 
                     //Singleton lifetime services are created the first time they are requested (or when ConfigureServices is run if you specify an instance there) and then every subsequent request will use the same instance
                     services.AddSingleton<ModalNavigationStore>();
