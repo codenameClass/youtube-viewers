@@ -13,6 +13,10 @@ namespace YouTubeViewers.Domain.Models
         public bool IsSubscribed { get; }
         public bool IsMember { get; }
 
+
+        public YouTubeViewer() { }
+
+
         public YouTubeViewer(Guid id, string username, bool isSubscribed, bool isMember)
         {
             Id = id;

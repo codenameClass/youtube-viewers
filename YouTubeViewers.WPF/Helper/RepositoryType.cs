@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouTubeViewers.Domain.Commands
+namespace YouTubeViewers.DataLayerProvider
 {
-    public interface IDeleteYouTubeViewerCommand
+    public enum RepositoryType
     {
-        Task Execute(Guid id);
+        MDB, EFCore
     }
 }

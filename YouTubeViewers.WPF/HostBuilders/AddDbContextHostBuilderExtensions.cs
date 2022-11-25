@@ -7,20 +7,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YouTubeViewers.EntityFramework;
+using YouTubeViewers.DataLayerProvider;
+using YouTubeViewers.EFLayer;
 
 namespace YouTubeViewers.WPF.HostBuilders
 {
     public static class AddDbContextHostBuilderExtensions
     {
+        private static RepositoryType type;
         public static IHostBuilder AddDbContext(this IHostBuilder hostBuilder)
         {
             hostBuilder.ConfigureServices((context, services) =>
             {
-                string connectionString = context.Configuration.GetConnectionString("sqlite");
+                services.AddDbContext<DbContext>();
+                string datalayer = System.Configuration.ConfigurationManager.AppSettings["DataLayer"];
 
-                services.AddSingleton<DbContextOptions>(new DbContextOptionsBuilder().UseSqlite(connectionString).Options);
-                services.AddSingleton<YouTubeViewersDbContextFactory>();
+                type = datalayer == "EFC" ? RepositoryType.EFCore : RepositoryType.MDB;
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[datalayer].ConnectionString;
+                if (type == RepositoryType.EFCore)
+                {
+                    services.AddSingleton<DbContextOptions>(new DbContextOptionsBuilder().UseSqlServer(connectionString).Options);
+                    services.AddSingleton<string>(connectionString);
+                    services.AddSingleton<YouTubeViewersDbContextEFFactory>();
+                }
+                else
+                {
+                    // ...
+                }
             });
                 
             return hostBuilder;
