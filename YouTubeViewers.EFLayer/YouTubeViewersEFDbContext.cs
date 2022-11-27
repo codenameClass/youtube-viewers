@@ -8,10 +8,14 @@ using System.Threading.Tasks;
 
 namespace YouTubeViewers.EFLayer.Repositories
 {
-    public class YouTubeViewersDbContextEF : DbContext
+    public class YouTubeViewersEFDbContext : DbContext
     {
         public string connectionString;
-        public YouTubeViewersDbContextEF(DbContextOptions options,  string connectionString) : base(options) {
+        public YouTubeViewersEFDbContext(string connectionString) {
+
+            //DbContextOptions options,
+            // : base(options)
+
             this.connectionString = connectionString;
         }
 
@@ -20,10 +24,6 @@ namespace YouTubeViewers.EFLayer.Repositories
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString);
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
         }
     }
 }

@@ -14,11 +14,11 @@ namespace YouTubeViewers.EFLayer.Repositories
     public class YoutubeViewerRepositoryEF : IYouTubeViewerRepository
     {
         DbContextOptions options;
-        YouTubeViewersDbContextEF ctx;
+        YouTubeViewersEFDbContext ctx;
         public YoutubeViewerRepositoryEF(string connectionString)
         {
-            options = new DbContextOptionsBuilder().UseSqlServer(connectionString).Options;
-            ctx = new YouTubeViewersDbContextEF(options, connectionString);
+            //options = new DbContextOptionsBuilder().UseSqlServer(connectionString).Options;
+            ctx = new YouTubeViewersEFDbContext(connectionString);
         }
 
         public Task Add(YouTubeViewer youTubeViewer)
@@ -76,7 +76,7 @@ namespace YouTubeViewers.EFLayer.Repositories
             }
         }
 
-        public async Task SaveAndClear(YouTubeViewersDbContextEF ctx)
+        public async Task SaveAndClear(YouTubeViewersEFDbContext ctx)
         {
             await ctx.SaveChangesAsync();
             ctx.ChangeTracker.Clear();

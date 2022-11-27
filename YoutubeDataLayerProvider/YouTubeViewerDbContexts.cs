@@ -22,10 +22,10 @@ namespace YouTubeViewers.DataLayerProvider
                 {
                     case RepositoryType.MDB:
                         //Todo: momenteel ingevuld zodat je steeds iets terug geeft
-                        DbContext = new YouTubeViewersDbContextEF(null, connectionstring);
+                        DbContext = new YouTubeViewersEFDbContext(connectionstring);
                         break;
                     case RepositoryType.EFCore:
-                        DbContext = new YouTubeViewersDbContextEF(null, connectionstring);
+                        DbContext = new YouTubeViewersEFDbContext(connectionstring);
                         break;
                     default: throw new YouTubeViewerDbContextFactoryException("GeefContext");
                 }

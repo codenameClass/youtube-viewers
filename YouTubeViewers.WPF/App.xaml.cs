@@ -83,7 +83,7 @@ namespace YouTubeViewers.WPF
             {
                 YouTubeViewersDbContextEFFactory youTubeViewersDbContextFactory =
                     _host.Services.GetRequiredService<YouTubeViewersDbContextEFFactory>();
-                using (YouTubeViewersDbContextEF context = youTubeViewersDbContextFactory.Create())
+                using (YouTubeViewersEFDbContext context = youTubeViewersDbContextFactory.Create())
                 {
                     context.Database.Migrate();
                 }

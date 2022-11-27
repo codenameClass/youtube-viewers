@@ -19,9 +19,9 @@ namespace YouTubeViewers.EFLayer.Repositories
             
         }
 
-        public YouTubeViewersDbContextEF Create()
+        public YouTubeViewersEFDbContext Create()
         {
-            return new YouTubeViewersDbContextEF(_options, _connectionstring);
+            return new YouTubeViewersEFDbContext(_connectionstring);
         }
     }
 }
